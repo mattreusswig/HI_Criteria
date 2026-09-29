@@ -1,0 +1,287 @@
+﻿substance_name,cas_no,criteria_name,water_type,criteria_class,limit_name,value,unit_name
+"1,1,1-Trichloroethane",71-55-6,Aquatic Life,Freshwater,Acute,MAX,6000,μg/L
+"1,1,1-Trichloroethane",71-55-6,Aquatic Life,Saltwater,Acute,MAX,10400,μg/L
+"1,1,1-Trichloroethane",71-55-6,Fish Consumption,NA,non-Carcinogen,MAX,200000,μg/L
+"1,1,2,2-Tetrachloroethane",79-34-5,Aquatic Life,Saltwater,Acute,MAX,3000,μg/L
+"1,1,2,2-Tetrachloroethane",79-34-5,Fish Consumption,NA,Carcinogen,MAX,3,μg/L
+"1,1,2-Trichloroethane",79-00-5,Aquatic Life,Freshwater,Acute,MAX,6000,μg/L
+"1,1,2-Trichloroethane",79-00-5,Fish Consumption,NA,Carcinogen,MAX,8.9,μg/L
+"1,1-Dichloroethylene",75-35-4,Fish Consumption,NA,non-Carcinogen,MAX,20000,μg/L
+"1,2,4,5-Tetrachlorobenzene",95-94-3,Fish Consumption,NA,non-Carcinogen,MAX,0.03,μg/L
+"1,2,4-Trichlorobenzene",120-82-1,Fish Consumption,NA,Carcinogen,MAX,0.076,μg/L
+"1,2-Dichlorobenzene",95-50-1,Fish Consumption,NA,non-Carcinogen,MAX,3000,μg/L
+"1,2-Dichloroethane",107-06-2,Aquatic Life,Freshwater,Acute,MAX,39000,μg/L
+"1,2-Dichloroethane",107-06-2,Aquatic Life,Saltwater,Acute,MAX,38000,μg/L
+"1,2-Dichloroethane",107-06-2,Fish Consumption,NA,Carcinogen,MAX,650,μg/L
+"1,2-Dichloropropane",78-87-5,Fish Consumption,NA,Carcinogen,MAX,31,μg/L
+"1,2-Diphenylhydrazine",122-66-7,Fish Consumption,NA,Carcinogen,MAX,0.2,μg/L
+"1,3-Dichlorobenzene",541-73-1,Fish Consumption,NA,non-Carcinogen,MAX,10,μg/L
+"1,3-Dichloropropene",542-75-6,Aquatic Life,Freshwater,Acute,MAX,2000,μg/L
+"1,3-Dichloropropene",542-75-6,Aquatic Life,Saltwater,Acute,MAX,260,μg/L
+"1,3-Dichloropropene",542-75-6,Fish Consumption,NA,Carcinogen,MAX,12,μg/L
+"1,4-Dichlorobenzene",106-46-7,Fish Consumption,NA,non-Carcinogen,MAX,900,μg/L
+"2,3,5,6-Tetrachlorophenol",-,Aquatic Life,Saltwater,Chronic,MAX,440,μg/L
+"2,3,7,8-TCDD (Dioxin)",1746-01-6,Aquatic Life,Freshwater,Acute,MAX,0.003,μg/L
+"2,3,7,8-TCDD (Dioxin)",1746-01-6,Fish Consumption,NA,Carcinogen,MAX,5.1E-09,μg/L
+"2,4,5-Trichlorophenol",95-95-4,Fish Consumption,NA,non-Carcinogen,MAX,600,μg/L
+"2,4,6-Trichlorophenol",88-06-2,Fish Consumption,NA,Carcinogen,MAX,2.8,μg/L
+"2,4-Dichlorophenol",120-83-2,Aquatic Life,Freshwater,Acute,MAX,670,μg/L
+"2,4-Dichlorophenol",120-83-2,Fish Consumption,NA,non-Carcinogen,MAX,60,μg/L
+"2,4-Dimethylphenol",105-67-9,Aquatic Life,Freshwater,Acute,MAX,700,μg/L
+"2,4-Dimethylphenol",105-67-9,Fish Consumption,NA,non-Carcinogen,MAX,3000,μg/L
+"2,4-Dinitrophenol",51-28-5,Fish Consumption,NA,non-Carcinogen,MAX,300,μg/L
+"2,4-Dinitrotoluene",121-14-2,Fish Consumption,NA,Carcinogen,MAX,1.7,μg/L
+2-Chloronaphthalene,91-58-7,Fish Consumption,NA,non-Carcinogen,MAX,1000,μg/L
+2-Chlorophenol,95-57-8,Aquatic Life,Freshwater,Acute,MAX,1400,μg/L
+2-Chlorophenol,95-57-8,Fish Consumption,NA,non-Carcinogen,MAX,800,μg/L
+"2-Methyl-4,6-Dinitrophenol",534-52-1,Fish Consumption,NA,non-Carcinogen,MAX,30,μg/L
+"3,3'-Dichlorobenzidine",91-94-1,Fish Consumption,NA,Carcinogen,MAX,0.15,μg/L
+3-Methyl-4-Chlorophenol,59-50-7,Fish Consumption,NA,non-Carcinogen,MAX,2000,μg/L
+Acenaphthene,83-32-9,Aquatic Life,Freshwater,Acute,MAX,570,μg/L
+Acenaphthene,83-32-9,Aquatic Life,Saltwater,Acute,MAX,320,μg/L
+Acenaphthene,83-32-9,Fish Consumption,NA,non-Carcinogen,MAX,90,μg/L
+Acrolein,107-02-8,Aquatic Life,Freshwater,Acute,MAX,23,μg/L
+Acrolein,107-02-8,Aquatic Life,Saltwater,Acute,MAX,18,μg/L
+Acrolein,107-02-8,Fish Consumption,NA,non-Carcinogen,MAX,400,μg/L
+Acrylonitrile,107-13-1,Aquatic Life,Freshwater,Acute,MAX,2500,μg/L
+Acrylonitrile,107-13-1,Fish Consumption,NA,Carcinogen,MAX,7,μg/L
+Aldrin,309-00-2,Aquatic Life,Freshwater,Acute,MAX,3,μg/L
+Aldrin,309-00-2,Aquatic Life,Saltwater,Acute,MAX,1.3,μg/L
+Aldrin,309-00-2,Fish Consumption,NA,Carcinogen,MAX,0.00000077,μg/L
+alpha-Endosulfan,959-98-8,Fish Consumption,NA,non-Carcinogen,MAX,30,μg/L
+alpha-Hexachloro-cyclohexane (HCH),319-84-6,Fish Consumption,NA,Carcinogen,MAX,0.00039,μg/L
+Aluminum,7429-90-5,Aquatic Life,Freshwater,Acute,MAX,750,μg/L
+Aluminum,7429-90-5,Aquatic Life,Freshwater,Chronic,MAX,260,μg/L
+Anthracene,120-12-7,Fish Consumption,NA,non-Carcinogen,MAX,400,μg/L
+Antimony,7440-36-0,Aquatic Life,Freshwater,Acute,MAX,3000,μg/L
+Antimony,7440-36-0,Fish Consumption,NA,non-Carcinogen,MAX,640,μg/L
+Arsenic,7440-38-2,Aquatic Life,Freshwater,Acute,MAX,360,μg/L
+Arsenic,7440-38-2,Aquatic Life,Freshwater,Chronic,MAX,190,μg/L
+Arsenic,7440-38-2,Aquatic Life,Saltwater,Acute,MAX,69,μg/L
+Arsenic,7440-38-2,Aquatic Life,Saltwater,Chronic,MAX,36,μg/L
+Arsenic,7440-38-2,Fish Consumption,NA,Carcinogen,MAX,0.14,μg/L
+Benzene,71-43-2,Aquatic Life,Freshwater,Acute,MAX,1800,μg/L
+Benzene,71-43-2,Aquatic Life,Saltwater,Acute,MAX,1700,μg/L
+Benzene,71-43-2,Fish Consumption,NA,Carcinogen,MAX,16,μg/L
+Benzidine,92-87-5,Aquatic Life,Freshwater,Acute,MAX,800,μg/L
+Benzidine,92-87-5,Fish Consumption,NA,Carcinogen,MAX,0.011,μg/L
+Benzo(a)anthracene,56-55-3,Fish Consumption,NA,Carcinogen,MAX,0.0013,μg/L
+Benzo(a)pyrene,50-32-8,Fish Consumption,NA,Carcinogen,MAX,0.00013,μg/L
+Benzo(b)fluoranthene,205-99-2,Fish Consumption,NA,Carcinogen,MAX,0.0013,μg/L
+Benzo(k)fluoranthene,207-08-9,Fish Consumption,NA,Carcinogen,MAX,0.013,μg/L
+Beryllium,7440-41-7,Aquatic Life,Freshwater,Acute,MAX,43,μg/L
+Beryllium,7440-41-7,Fish Consumption,NA,non-Carcinogen,MAX,0.038,μg/L
+beta-Endosulfan,33213-65-9,Fish Consumption,NA,non-Carcinogen,MAX,40,μg/L
+beta-Hexachloro-cyclohexane (HCH),319-85-7,Fish Consumption,NA,Carcinogen,MAX,0.014,μg/L
+Bis(2-Chloro-1-Methylethyl) Ether,108-60-1,Fish Consumption,NA,non-Carcinogen,MAX,4000,μg/L
+Bis(2-Chloroethyl) Ether,111-44-4,Fish Consumption,NA,Carcinogen,MAX,2.2,μg/L
+Bis(2-Ethylhexyl) Phthalate,117-81-7,Fish Consumption,NA,Carcinogen,MAX,0.37,μg/L
+Bis(Chloromethyl) Ether,542-88-1,Fish Consumption,NA,Carcinogen,MAX,0.017,μg/L
+Bromoform,75-25-2,Fish Consumption,NA,Carcinogen,MAX,120,μg/L
+Butylbenzyl Phthalate,85-68-7,Fish Consumption,NA,Carcinogen,MAX,0.1,μg/L
+Cadmium,7440-43-9,Aquatic Life,Freshwater,Acute,MAX,hardness-based,μg/L
+Cadmium,7440-43-9,Aquatic Life,Freshwater,Chronic,MAX,hardness-based,μg/L
+Cadmium,7440-43-9,Aquatic Life,Saltwater,Acute,MAX,43,μg/L
+Cadmium,7440-43-9,Aquatic Life,Saltwater,Chronic,MAX,9.3,μg/L
+Carbon Tetrachloride,56-23-5,Aquatic Life,Freshwater,Acute,MAX,12000,μg/L
+Carbon Tetrachloride,56-23-5,Aquatic Life,Saltwater,Acute,MAX,16000,μg/L
+Carbon Tetrachloride,56-23-5,Fish Consumption,NA,Carcinogen,MAX,5,μg/L
+Chlordane,57-74-9,Aquatic Life,Freshwater,Acute,MAX,2.4,μg/L
+Chlordane,57-74-9,Aquatic Life,Freshwater,Chronic,MAX,0.0043,μg/L
+Chlordane,57-74-9,Aquatic Life,Saltwater,Acute,MAX,0.09,μg/L
+Chlordane,57-74-9,Aquatic Life,Saltwater,Chronic,MAX,0.004,μg/L
+Chlordane,57-74-9,Fish Consumption,NA,Carcinogen,MAX,0.00032,μg/L
+Chlorine,7782-50-5,Aquatic Life,Freshwater,Acute,MAX,19,μg/L
+Chlorine,7782-50-5,Aquatic Life,Freshwater,Chronic,MAX,11,μg/L
+Chlorine,7782-50-5,Aquatic Life,Saltwater,Acute,MAX,13,μg/L
+Chlorine,7782-50-5,Aquatic Life,Saltwater,Chronic,MAX,7.5,μg/L
+Chlorobenzene,108-90-7,Fish Consumption,NA,non-Carcinogen,MAX,800,μg/L
+Chlorodibromomethane,124-48-1,Fish Consumption,NA,Carcinogen,MAX,21,μg/L
+Chloroform,67-66-3,Aquatic Life,Freshwater,Acute,MAX,9600,μg/L
+Chloroform,67-66-3,Fish Consumption,NA,non-Carcinogen,MAX,2000,μg/L
+"Chlorophenoxy Herbicide (2,4,5-TP) [Silvex]",93-72-1,Fish Consumption,NA,non-Carcinogen,MAX,400,μg/L
+"Chlorophenoxy Herbicide (2,4-D)",94-75-7,Fish Consumption,NA,non-Carcinogen,MAX,12000,μg/L
+Chlorpyrifos,2921-88-2,Aquatic Life,Freshwater,Acute,MAX,0.083,μg/L
+Chlorpyrifos,2921-88-2,Aquatic Life,Freshwater,Chronic,MAX,0.041,μg/L
+Chlorpyrifos,2921-88-2,Aquatic Life,Saltwater,Acute,MAX,0.011,μg/L
+Chlorpyrifos,2921-88-2,Aquatic Life,Saltwater,Chronic,MAX,0.0056,μg/L
+Chromium (VI),18540-29-9,Aquatic Life,Freshwater,Acute,MAX,16,μg/L
+Chromium (VI),18540-29-9,Aquatic Life,Freshwater,Chronic,MAX,11,μg/L
+Chromium (VI),18540-29-9,Aquatic Life,Saltwater,Acute,MAX,1100,μg/L
+Chromium (VI),18540-29-9,Aquatic Life,Saltwater,Chronic,MAX,50,μg/L
+Chrysene,218-01-9,Fish Consumption,NA,Carcinogen,MAX,0.13,μg/L
+Copper,7440-50-8,Aquatic Life,Freshwater,Acute,MAX,hardness-based,μg/L
+Copper,7440-50-8,Aquatic Life,Freshwater,Chronic,MAX,hardness-based,μg/L
+Copper,7440-50-8,Aquatic Life,Saltwater,Acute,MAX,2.9,μg/L
+Copper,7440-50-8,Aquatic Life,Saltwater,Chronic,MAX,2.9,μg/L
+Cyanide,57-12-5,Aquatic Life,Freshwater,Acute,MAX,22,μg/L
+Cyanide,57-12-5,Aquatic Life,Freshwater,Chronic,MAX,5.2,μg/L
+Cyanide,57-12-5,Aquatic Life,Saltwater,Acute,MAX,1,μg/L
+Cyanide,57-12-5,Aquatic Life,Saltwater,Chronic,MAX,1,μg/L
+Cyanide,57-12-5,Fish Consumption,NA,non-Carcinogen,MAX,400,μg/L
+Demeton,8065-48-3,Aquatic Life,Freshwater,Chronic,MAX,0.1,μg/L
+Demeton,8065-48-3,Aquatic Life,Saltwater,Chronic,MAX,0.1,μg/L
+"Dibenzo(a,h)anthracene",53-70-3,Fish Consumption,NA,Carcinogen,MAX,0.00013,μg/L
+Dichlorobenzenes,-,Aquatic Life,Freshwater,Acute,MAX,370,μg/L
+Dichlorobenzenes,-,Aquatic Life,Saltwater,Acute,MAX,660,μg/L
+Dichlorobromomethane,75-27-4,Fish Consumption,NA,Carcinogen,MAX,27,μg/L
+Dichloropropanes,-,Aquatic Life,Freshwater,Acute,MAX,7700,μg/L
+Dichloropropanes,-,Aquatic Life,Saltwater,Acute,MAX,3400,μg/L
+Dieldrin,60-57-1,Aquatic Life,Freshwater,Acute,MAX,2.5,μg/L
+Dieldrin,60-57-1,Aquatic Life,Freshwater,Chronic,MAX,0.0019,μg/L
+Dieldrin,60-57-1,Aquatic Life,Saltwater,Acute,MAX,0.71,μg/L
+Dieldrin,60-57-1,Aquatic Life,Saltwater,Chronic,MAX,0.0019,μg/L
+Dieldrin,60-57-1,Fish Consumption,NA,Carcinogen,MAX,0.0000012,μg/L
+Diethyl Phthalate,84-66-2,Fish Consumption,NA,non-Carcinogen,MAX,600,μg/L
+Dimethyl Phthalate,131-11-3,Fish Consumption,NA,non-Carcinogen,MAX,2000,μg/L
+Di-n-Butyl Phthalate,84-74-2,Fish Consumption,NA,non-Carcinogen,MAX,30,μg/L
+Dinitrophenols,25550-58-7,Fish Consumption,NA,non-Carcinogen,MAX,1000,μg/L
+Dinitrotoluenes,-,Aquatic Life,Freshwater,Acute,MAX,110,μg/L
+Dinitrotoluenes,-,Aquatic Life,Saltwater,Acute,MAX,200,μg/L
+Endosulfan,-,Aquatic Life,Freshwater,Acute,MAX,0.22,μg/L
+Endosulfan,-,Aquatic Life,Freshwater,Chronic,MAX,0.056,μg/L
+Endosulfan,-,Aquatic Life,Saltwater,Acute,MAX,0.034,μg/L
+Endosulfan,-,Aquatic Life,Saltwater,Chronic,MAX,0.0087,μg/L
+Endosulfan Sulfate,1031-07-8,Fish Consumption,NA,non-Carcinogen,MAX,40,μg/L
+Endrin,72-20-8,Aquatic Life,Freshwater,Acute,MAX,0.18,μg/L
+Endrin,72-20-8,Aquatic Life,Freshwater,Chronic,MAX,0.0023,μg/L
+Endrin,72-20-8,Aquatic Life,Saltwater,Acute,MAX,0.037,μg/L
+Endrin,72-20-8,Aquatic Life,Saltwater,Chronic,MAX,0.0023,μg/L
+Endrin,72-20-8,Fish Consumption,NA,non-Carcinogen,MAX,0.03,μg/L
+Endrin Aldehyde,7421-93-4,Fish Consumption,NA,non-Carcinogen,MAX,1,μg/L
+Ethylbenzene,100-41-4,Aquatic Life,Freshwater,Acute,MAX,11000,μg/L
+Ethylbenzene,100-41-4,Aquatic Life,Saltwater,Acute,MAX,140,μg/L
+Ethylbenzene,100-41-4,Fish Consumption,NA,non-Carcinogen,MAX,130,μg/L
+Fluoranthene,206-44-0,Aquatic Life,Freshwater,Acute,MAX,1300,μg/L
+Fluoranthene,206-44-0,Aquatic Life,Saltwater,Acute,MAX,13,μg/L
+Fluoranthene,206-44-0,Fish Consumption,NA,non-Carcinogen,MAX,20,μg/L
+Fluorene,86-73-7,Fish Consumption,NA,non-Carcinogen,MAX,70,μg/L
+gamma-Hexachloro-cyclohexane (HCH) [Lindane],58-89-9,Aquatic Life,Freshwater,Acute,MAX,2,μg/L
+gamma-Hexachloro-cyclohexane (HCH) [Lindane],58-89-9,Aquatic Life,Freshwater,Chronic,MAX,0.08,μg/L
+gamma-Hexachloro-cyclohexane (HCH) [Lindane],58-89-9,Aquatic Life,Saltwater,Acute,MAX,0.16,μg/L
+gamma-Hexachloro-cyclohexane (HCH) [Lindane],58-89-9,Fish Consumption,NA,non-Carcinogen,MAX,4.4,μg/L
+Guthion,86-50-0,Aquatic Life,Freshwater,Chronic,MAX,0.01,μg/L
+Guthion,86-50-0,Aquatic Life,Saltwater,Chronic,MAX,0.01,μg/L
+Heptachlor,76-44-8,Aquatic Life,Freshwater,Acute,MAX,0.52,μg/L
+Heptachlor,76-44-8,Aquatic Life,Freshwater,Chronic,MAX,0.0038,μg/L
+Heptachlor,76-44-8,Aquatic Life,Saltwater,Acute,MAX,0.053,μg/L
+Heptachlor,76-44-8,Aquatic Life,Saltwater,Chronic,MAX,0.0036,μg/L
+Heptachlor,76-44-8,Fish Consumption,NA,Carcinogen,MAX,0.0000059,μg/L
+Heptachlor Epoxide,1024-57-3,Fish Consumption,NA,Carcinogen,MAX,0.000032,μg/L
+Hexachlorobenzene,118-74-1,Fish Consumption,NA,Carcinogen,MAX,0.000079,μg/L
+Hexachlorobutadiene,87-68-3,Aquatic Life,Freshwater,Acute,MAX,30,μg/L
+Hexachlorobutadiene,87-68-3,Aquatic Life,Saltwater,Acute,MAX,11,μg/L
+Hexachlorobutadiene,87-68-3,Fish Consumption,NA,Carcinogen,MAX,0.01,μg/L
+Hexachloro-cyclohexane (HCH)-Technical,608-73-1,Fish Consumption,NA,Carcinogen,MAX,0.01,μg/L
+Hexachloro-cyclopentadiene,77-47-4,Aquatic Life,Freshwater,Acute,MAX,2,μg/L
+Hexachloro-cyclopentadiene,77-47-4,Aquatic Life,Saltwater,Acute,MAX,2,μg/L
+Hexachloro-cyclopentadiene,77-47-4,Fish Consumption,NA,non-Carcinogen,MAX,4,μg/L
+Hexachloroethane,67-72-1,Aquatic Life,Freshwater,Acute,MAX,330,μg/L
+Hexachloroethane,67-72-1,Aquatic Life,Saltwater,Acute,MAX,310,μg/L
+Hexachloroethane,67-72-1,Fish Consumption,NA,Carcinogen,MAX,0.1,μg/L
+"Indeno(1,2,3-cd)pyrene",193-39-5,Fish Consumption,NA,Carcinogen,MAX,0.0013,μg/L
+Isophorone,78-59-1,Aquatic Life,Freshwater,Acute,MAX,39000,μg/L
+Isophorone,78-59-1,Aquatic Life,Saltwater,Acute,MAX,4300,μg/L
+Isophorone,78-59-1,Fish Consumption,NA,Carcinogen,MAX,1800,μg/L
+Lead,7439-92-1,Aquatic Life,Freshwater,Acute,MAX,hardness-based,μg/L
+Lead,7439-92-1,Aquatic Life,Freshwater,Chronic,MAX,hardness-based,μg/L
+Lead,7439-92-1,Aquatic Life,Saltwater,Acute,MAX,140,μg/L
+Lead,7439-92-1,Aquatic Life,Saltwater,Chronic,MAX,5.6,μg/L
+Malathion,121-75-5,Aquatic Life,Freshwater,Chronic,MAX,0.1,μg/L
+Malathion,121-75-5,Aquatic Life,Saltwater,Chronic,MAX,0.1,μg/L
+Mercury,7439-97-6,Aquatic Life,Freshwater,Acute,MAX,2.4,μg/L
+Mercury,7439-97-6,Aquatic Life,Freshwater,Chronic,MAX,0.55,μg/L
+Mercury,7439-97-6,Aquatic Life,Saltwater,Acute,MAX,2.1,μg/L
+Mercury,7439-97-6,Aquatic Life,Saltwater,Chronic,MAX,0.025,μg/L
+Mercury,7439-97-6,Fish Consumption,NA,non-Carcinogen,MAX,0.047,μg/L
+Methoxychlor,72-43-5,Aquatic Life,Freshwater,Chronic,MAX,0.03,μg/L
+Methoxychlor,72-43-5,Aquatic Life,Saltwater,Chronic,MAX,0.03,μg/L
+Methoxychlor,72-43-5,Fish Consumption,NA,non-Carcinogen,MAX,0.02,μg/L
+Methyl Bromide,74-83-9,Fish Consumption,NA,non-Carcinogen,MAX,10000,μg/L
+Methylene Chloride,75-09-2,Fish Consumption,NA,Carcinogen,MAX,1000,μg/L
+Methylmercury,22967-92-6,Fish Consumption,NA,non-Carcinogen,MAX,0.3,mg/kg
+Mirex,2385-85-5,Aquatic Life,Freshwater,Chronic,MAX,0.001,μg/L
+Mirex,2385-85-5,Aquatic Life,Saltwater,Chronic,MAX,0.001,μg/L
+Naphthalene,91-20-3,Aquatic Life,Freshwater,Acute,MAX,770,μg/L
+Naphthalene,91-20-3,Aquatic Life,Saltwater,Acute,MAX,780,μg/L
+Nickel,7440-02-0,Aquatic Life,Freshwater,Acute,MAX,hardness-based,μg/L
+Nickel,7440-02-0,Aquatic Life,Freshwater,Chronic,MAX,hardness-based,μg/L
+Nickel,7440-02-0,Aquatic Life,Saltwater,Acute,MAX,75,μg/L
+Nickel,7440-02-0,Aquatic Life,Saltwater,Chronic,MAX,8.3,μg/L
+Nickel,7440-02-0,Fish Consumption,NA,non-Carcinogen,MAX,4600,μg/L
+Nitrobenzene,98-95-3,Aquatic Life,Freshwater,Acute,MAX,9000,μg/L
+Nitrobenzene,98-95-3,Aquatic Life,Saltwater,Acute,MAX,2200,μg/L
+Nitrobenzene,98-95-3,Fish Consumption,NA,non-Carcinogen,MAX,600,μg/L
+Nitrophenols,-,Aquatic Life,Freshwater,Acute,MAX,77,μg/L
+Nitrophenols,-,Aquatic Life,Saltwater,Acute,MAX,1600,μg/L
+Nitrosamines,-,Aquatic Life,Freshwater,Acute,MAX,1950,μg/L
+Nitrosamines,-,Fish Consumption,NA,Carcinogen,MAX,1.24,μg/L
+Nitrosodibutylamine,924-16-3,Fish Consumption,NA,Carcinogen,MAX,0.22,μg/L
+Nitrosodiethylamine,55-18-5,Fish Consumption,NA,Carcinogen,MAX,1.24,μg/L
+Nitrosopyrrolidine,930-55-2,Fish Consumption,NA,Carcinogen,MAX,34,μg/L
+N-Nitrosodimethylamine,62-75-9,Fish Consumption,NA,Carcinogen,MAX,3,μg/L
+N-Nitrosodi-n-Propylamine,621-64-7,Fish Consumption,NA,Carcinogen,MAX,0.51,μg/L
+N-Nitrosodiphenylamine,86-30-6,Fish Consumption,NA,Carcinogen,MAX,6,μg/L
+"p,p'-Dichlorodiphenyl-dichloroethane (DDD)",72-54-8,Aquatic Life,Freshwater,Acute,MAX,0.03,μg/L
+"p,p'-Dichlorodiphenyl-dichloroethane (DDD)",72-54-8,Aquatic Life,Saltwater,Acute,MAX,1.2,μg/L
+"p,p'-Dichlorodiphenyl-dichloroethane (DDD)",72-54-8,Fish Consumption,NA,Carcinogen,MAX,0.00012,μg/L
+"p,p'-Dichlorodiphenyl-dichloroethylene (DDE)",72-55-9,Fish Consumption,NA,Carcinogen,MAX,0.000018,μg/L
+"p,p'-Dichlorodiphenyl-trichloroethane (DDT)",50-29-3,Aquatic Life,Freshwater,Acute,MAX,1.1,μg/L
+"p,p'-Dichlorodiphenyl-trichloroethane (DDT)",50-29-3,Aquatic Life,Freshwater,Chronic,MAX,0.001,μg/L
+"p,p'-Dichlorodiphenyl-trichloroethane (DDT)",50-29-3,Aquatic Life,Saltwater,Acute,MAX,0.013,μg/L
+"p,p'-Dichlorodiphenyl-trichloroethane (DDT)",50-29-3,Aquatic Life,Saltwater,Chronic,MAX,0.001,μg/L
+"p,p'-Dichlorodiphenyl-trichloroethane (DDT)",50-29-3,Fish Consumption,NA,Carcinogen,MAX,0.00003,μg/L
+Parathion,56-38-2,Aquatic Life,Freshwater,Acute,MAX,0.065,μg/L
+Parathion,56-38-2,Aquatic Life,Freshwater,Chronic,MAX,0.013,μg/L
+Pentachlorobenzene,608-93-5,Fish Consumption,NA,non-Carcinogen,MAX,0.1,μg/L
+Pentachloroethane,-,Aquatic Life,Freshwater,Acute,MAX,2400,μg/L
+Pentachloroethane,-,Aquatic Life,Saltwater,Acute,MAX,130,μg/L
+Pentachlorophenol,87-86-5,Aquatic Life,Freshwater,Acute,MAX,20,μg/L
+Pentachlorophenol,87-86-5,Aquatic Life,Freshwater,Chronic,MAX,13,μg/L
+Pentachlorophenol,87-86-5,Aquatic Life,Saltwater,Acute,MAX,13,μg/L
+Pentachlorophenol,87-86-5,Fish Consumption,NA,Carcinogen,MAX,0.04,μg/L
+Phenol,108-95-2,Aquatic Life,Freshwater,Acute,MAX,3400,μg/L
+Phenol,108-95-2,Aquatic Life,Saltwater,Acute,MAX,170,μg/L
+Phenol,108-95-2,Fish Consumption,NA,non-Carcinogen,MAX,300000,μg/L
+Polychlorinated Biphenyls (PCBs),-,Aquatic Life,Freshwater,Acute,MAX,2,μg/L
+Polychlorinated Biphenyls (PCBs),-,Aquatic Life,Freshwater,Chronic,MAX,0.014,μg/L
+Polychlorinated Biphenyls (PCBs),-,Aquatic Life,Saltwater,Acute,MAX,10,μg/L
+Polychlorinated Biphenyls (PCBs),-,Aquatic Life,Saltwater,Chronic,MAX,0.03,μg/L
+Polychlorinated Biphenyls (PCBs),-,Fish Consumption,NA,Carcinogen,MAX,0.000064,μg/L
+Pyrene,129-00-0,Fish Consumption,NA,non-Carcinogen,MAX,30,μg/L
+Selenium,7782-49-2,Aquatic Life,Freshwater,Acute,MAX,20,μg/L
+Selenium,7782-49-2,Aquatic Life,Freshwater,Chronic,MAX,5,μg/L
+Selenium,7782-49-2,Aquatic Life,Saltwater,Acute,MAX,300,μg/L
+Selenium,7782-49-2,Aquatic Life,Saltwater,Chronic,MAX,71,μg/L
+Selenium,7782-49-2,Fish Consumption,NA,non-Carcinogen,MAX,4200,μg/L
+Silver,7440-22-4,Aquatic Life,Freshwater,Acute,MAX,hardness-based,μg/L
+Silver,7440-22-4,Aquatic Life,Freshwater,Chronic,MAX,hardness-based,μg/L
+Silver,7440-22-4,Aquatic Life,Saltwater,Acute,MAX,2.3,μg/L
+Tetrachloroethanes,-,Aquatic Life,Freshwater,Acute,MAX,3100,μg/L
+Tetrachloroethylene,127-18-4,Aquatic Life,Freshwater,Acute,MAX,1800,μg/L
+Tetrachloroethylene,127-18-4,Aquatic Life,Saltwater,Acute,MAX,3400,μg/L
+Tetrachloroethylene,127-18-4,Aquatic Life,Saltwater,Chronic,MAX,145,μg/L
+Tetrachloroethylene,127-18-4,Fish Consumption,NA,Carcinogen,MAX,29,μg/L
+Thallium,7440-28-0,Aquatic Life,Freshwater,Acute,MAX,470,μg/L
+Thallium,7440-28-0,Aquatic Life,Saltwater,Acute,MAX,710,μg/L
+Thallium,7440-28-0,Fish Consumption,NA,non-Carcinogen,MAX,0.47,μg/L
+Toluene,108-88-3,Aquatic Life,Freshwater,Acute,MAX,5800,μg/L
+Toluene,108-88-3,Aquatic Life,Saltwater,Acute,MAX,2100,μg/L
+Toluene,108-88-3,Fish Consumption,NA,non-Carcinogen,MAX,520,μg/L
+Toxaphene,8001-35-2,Aquatic Life,Freshwater,Acute,MAX,0.73,μg/L
+Toxaphene,8001-35-2,Aquatic Life,Freshwater,Chronic,MAX,0.0002,μg/L
+Toxaphene,8001-35-2,Aquatic Life,Saltwater,Acute,MAX,0.21,μg/L
+Toxaphene,8001-35-2,Aquatic Life,Saltwater,Chronic,MAX,0.0002,μg/L
+Toxaphene,8001-35-2,Fish Consumption,NA,Carcinogen,MAX,0.00071,μg/L
+"Trans-1,2-Dichloroethylene",156-60-5,Fish Consumption,NA,non-Carcinogen,MAX,4000,μg/L
+Tributyltin (TBT),-,Aquatic Life,Freshwater,Chronic,MAX,0.026,μg/L
+Tributyltin (TBT),-,Aquatic Life,Saltwater,Chronic,MAX,0.01,μg/L
+Trichloroethylene,79-01-6,Aquatic Life,Freshwater,Acute,MAX,15000,μg/L
+Trichloroethylene,79-01-6,Aquatic Life,Saltwater,Acute,MAX,700,μg/L
+Trichloroethylene,79-01-6,Fish Consumption,NA,Carcinogen,MAX,7,μg/L
+Vinyl Chloride,75-01-4,Fish Consumption,NA,Carcinogen,MAX,1.6,μg/L
+Zinc,7440-66-6,Aquatic Life,Freshwater,Acute,MAX,hardness-based,μg/L
+Zinc,7440-66-6,Aquatic Life,Freshwater,Chronic,MAX,hardness-based,μg/L
+Zinc,7440-66-6,Aquatic Life,Saltwater,Acute,MAX,95,μg/L
+Zinc,7440-66-6,Aquatic Life,Saltwater,Chronic,MAX,86,μg/L
+Zinc,7440-66-6,Fish Consumption,NA,non-Carcinogen,MAX,26000,μg/L
