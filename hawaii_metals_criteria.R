@@ -1,7 +1,7 @@
 
 
 #####################################################################
-#####   Compute HAWAII Harness-based Metal Criterion   ##############
+#####   Compute HAWAII Hardness-based Metal Criterion   #############
 #####################################################################
 
 # Date: 2026-09-19
@@ -104,8 +104,6 @@ calc_cf <- function(hardness, type_code) {
              "NICKEL_CHRONIC_FRESH"   = (0.997),
              "NICKEL_CHRONIC_SALT"    = (0.990),
              
-             # CHECK: Draft HIP Table 1 marks freshwater selenium as [4]
-             # (bioaccumulated; do not adjust to percent dissolved), not 1.000.
              "SELENIUM_ACUTE_FRESH"   = (1),
              "SELENIUM_ACUTE_SALT"    = (0.998),
              
@@ -115,9 +113,7 @@ calc_cf <- function(hardness, type_code) {
              "SILVER_ACUTE_FRESH"   = (0.850),
              "SILVER_ACUTE_SALT"    = (0.850),
              
-             "SILVER_CHRONIC_FRESH"   = (0.850),
-             # CHECK: Draft HIP Table 1 marks chronic marine silver as [2]
-             # (no published criterion), rather than a numeric CF of 1.
+             "SILVER_CHRONIC_FRESH"   = (1),
              "SILVER_CHRONIC_SALT"    = (1),
              
              "ZINC_ACUTE_FRESH"   = (0.978),
@@ -140,7 +136,7 @@ calc_cf <- function(hardness, type_code) {
              "CADMIUM_ACUTE_FRESH"  = 0.0418380,
              "CADMIUM_ACUTE_SALT"   = 0,
              
-             "CADMIUM_CHRONIC_FRESH"  = 0.041838,
+             "CADMIUM_CHRONIC_FRESH"  = 0.0418380,
              "CADMIUM_CHRONIC_SALT"   = 0,
              
              "CHROMIUM(VI)_ACUTE_FRESH"  = 0,
@@ -192,6 +188,12 @@ calc_cf <- function(hardness, type_code) {
              "ZINC_CHRONIC_SALT"    = 0
   )
   
+  # Conversion factors that do not depend on hardness are returned as is, so
+  # hardness is not needed for them.
+  if (m == 0) {
+    return(b)
+  }
+
   # The Hawaii equations are b - ln(hardness) * m for Cd and Pb.  The prior
   # division produced incorrect conversion factors (and incorrect units).
   cf = b - log(hardness) * m
@@ -202,6 +204,14 @@ calc_cf <- function(hardness, type_code) {
 # Function to compute the metal's total recoverable criterion in ug/L. This function
 # assumes the permittee's metal translator is equal to the conversion factor (CF)
 # specified in the water quality standards.
+#   - Freshwater Cd, Cu, Pb, Ni, Ag, and Zn criteria are hardness-based. The
+#     HAR 11-54 equation exp(m * ln(hardness) + b) gives the total recoverable
+#     criterion directly.
+#   - All other criteria (As, Cr(VI), Hg, and Se, and the saltwater criteria
+#     for every metal) are fixed dissolved values that do not depend on
+#     hardness. They are divided by the CF to give the total recoverable
+#     criterion, and hardness is not needed.
+# Combinations with no published criterion (chronic saltwater silver) return NA.
 # hardness = numeric type, hardness value in mg/L CaCO3
 # parameter = string giving the name of the metal
 # type = string giving the type of criteria (acute or chronic)
@@ -211,91 +221,101 @@ calc_total_metal_criterion <- function(hardness, parameter, type, class) {
   # Validate input and create a type code to feed cf and total metal criterion functions.
   type_code <- make_type(parameter = parameter, type = type, class = class)
   
-  # class type_code to get the slope and intercept of the total recoverable metal criterion.
+  # class type_code to get the slope and intercept of the hardness-based total
+  # recoverable metal criterion. Metals without a hardness-based criterion are
+  # not listed and return NULL.
   b = switch(type_code, 
-             # -999 is used for type_code values for which there is not a 
-             # valid dissolved criterion
-             
              "CADMIUM_ACUTE_FRESH"   = -3.828,
-             "CADMIUM_ACUTE_SALT"   = -999,
-             
-             
              "CADMIUM_CHRONIC_FRESH"   = -3.49,
-             "CADMIUM_CHRONIC_SALT"   = -999,
              
-             "COPPER_ACUTE_FRESH"   = -1.465,
-             "COPPER_ACUTE_SALT"   = -999,
-             
+             "COPPER_ACUTE_FRESH"   = -1.464,
              "COPPER_CHRONIC_FRESH"   = -1.465,
-             "COPPER_CHRONIC_SALT"   = -999,
              
              "LEAD_ACUTE_FRESH"   = -1.46,
-             "LEAD_ACUTE_SALT"   = -999,
-             
              "LEAD_CHRONIC_FRESH"   = -4.705,
-             "LEAD_CHRONIC_SALT"   = -999,
              
              "NICKEL_ACUTE_FRESH"   = 4.02,
-             "NICKEL_ACUTE_SALT"   = -999,
-             
              "NICKEL_CHRONIC_FRESH"   = 1.06,
-             "NICKEL_CHRONIC_SALT"   = -999,
              
              "SILVER_ACUTE_FRESH"   = -6.52,
-             "SILVER_ACUTE_SALT"   = -999,
-             
              "SILVER_CHRONIC_FRESH"   = -6.52,
-             "SILVER_CHRONIC_SALT"   = -999,
              
              "ZINC_ACUTE_FRESH"   = 1.95,
-             "ZINC_ACUTE_SALT"   = -999,
-             
-             "ZINC_CHRONIC_FRESH"   = 1.95,
-             "ZINC_CHRONIC_SALT"   = -999
+             "ZINC_CHRONIC_FRESH"   = 1.95
                )
   
   m = switch(type_code, 
-             # 0 is used for type_code values for which there is not a 
-             # valid dissolved criterion.
-             
              "CADMIUM_ACUTE_FRESH"   = 1.128,
-             "CADMIUM_ACUTE_SALT"   = 0,
-             
              "CADMIUM_CHRONIC_FRESH"   = 0.7852,
-             "CADMIUM_CHRONIC_SALT"   = 0,
              
              "COPPER_ACUTE_FRESH"   = 0.9422,
-             "COPPER_ACUTE_SALT"   = 0,
-             
              "COPPER_CHRONIC_FRESH"   = 0.8545,
-             "COPPER_CHRONIC_SALT"   = 0,
              
              "LEAD_ACUTE_FRESH"   = 1.273,
-             "LEAD_ACUTE_SALT"   = 0,
-             
              "LEAD_CHRONIC_FRESH"   = 1.273,
-             "LEAD_CHRONIC_SALT"   = 0,
              
              "NICKEL_ACUTE_FRESH"   = 0.760,
-             "NICKEL_ACUTE_SALT"   = 0,
-             
              "NICKEL_CHRONIC_FRESH"   = 0.760,
-             "NICKEL_CHRONIC_SALT"   = 0,
              
              "SILVER_ACUTE_FRESH"   = 1.72,
-             "SILVER_ACUTE_SALT"   = 0,
-             
              "SILVER_CHRONIC_FRESH"   = 1.72,
-             "SILVER_CHRONIC_SALT"   = 0,
              
              "ZINC_ACUTE_FRESH"   = 0.830,
-             "ZINC_ACUTE_SALT"   = 0,
-             
-             "ZINC_CHRONIC_FRESH"   =  0.830,
-             "ZINC_CHRONIC_SALT"   = 0
+             "ZINC_CHRONIC_FRESH"   =  0.830
   )
   
-  total_crit = exp(b + log(hardness) * m)
+  # Fixed dissolved criteria (ug/L) from HAR 11-54 for criteria that do not
+  # depend on hardness. NA is used where there is no published criterion.
+  fixed_dissolved_crit = switch(type_code,
+             "ARSENIC_ACUTE_FRESH"   = 360,
+             "ARSENIC_CHRONIC_FRESH" = 190,
+             "ARSENIC_ACUTE_SALT"    = 69,
+             "ARSENIC_CHRONIC_SALT"  = 36,
+             
+             "CADMIUM_ACUTE_SALT"    = 43,
+             "CADMIUM_CHRONIC_SALT"  = 9.3,
+             
+             "CHROMIUM(VI)_ACUTE_FRESH"   = 16,
+             "CHROMIUM(VI)_CHRONIC_FRESH" = 11,
+             "CHROMIUM(VI)_ACUTE_SALT"    = 1100,
+             "CHROMIUM(VI)_CHRONIC_SALT"  = 50,
+             
+             "COPPER_ACUTE_SALT"     = 2.9,
+             "COPPER_CHRONIC_SALT"   = 2.9,
+             
+             "LEAD_ACUTE_SALT"       = 140,
+             "LEAD_CHRONIC_SALT"     = 5.6,
+             
+             "MERCURY_ACUTE_FRESH"   = 2.4,
+             "MERCURY_CHRONIC_FRESH" = 0.55,
+             "MERCURY_ACUTE_SALT"    = 2.1,
+             "MERCURY_CHRONIC_SALT"  = 0.025,
+             
+             "NICKEL_ACUTE_SALT"     = 75,
+             "NICKEL_CHRONIC_SALT"   = 8.3,
+             
+             "SELENIUM_ACUTE_FRESH"   = 20,
+             "SELENIUM_CHRONIC_FRESH" = 5,
+             "SELENIUM_ACUTE_SALT"    = 300,
+             "SELENIUM_CHRONIC_SALT"  = 71,
+             
+             "SILVER_ACUTE_SALT"     = 2.3,
+             "SILVER_CHRONIC_SALT"   = NA,
+             
+             "ZINC_ACUTE_SALT"       = 95,
+             "ZINC_CHRONIC_SALT"     = 86
+  )
+  
+  if (!is.null(b)) {
+    # Hardness-based criterion, already total recoverable.
+    total_crit = exp(b + log(hardness) * m)
+  } else if (!is.null(fixed_dissolved_crit)) {
+    # Fixed dissolved criterion, converted to total recoverable.
+    total_crit = fixed_dissolved_crit / calc_cf(hardness = hardness,
+                                                type_code = type_code)
+  } else {
+    total_crit = NA_real_
+  }
   
   total_crit <- ifelse(total_crit == 0, NA, total_crit)
   
@@ -329,113 +349,153 @@ calc_dissolved_metal_criterion <- function(hardness, parameter, type, class) {
   
 }
 
-
-# Return the lowest applicable Hawaii criterion from hi_criteria_long_format.csv.
-# `use` may be "Aquatic Life", "Fish Consumption", or both. `water_class` may
-# be "Freshwater", "Saltwater", or both. Freshwater metal rows marked
-# "hardness-based" are calculated with the total-recoverable metal equations
-# above and require hardness in mg/L as CaCO3. The default return is a number
-# in ug/L; verbose = TRUE returns that value plus the source metadata.
+# Return the controlling criterion in hi_criteria_long_format.csv for a
+# parameter.
+#
+# `use` may contain any of "Aquatic Life", "Fish Consumption", "General", and
+# "Recreation".  `water_class` may contain any of "Freshwater", "Saltwater",
+# and "Inland Freshwater"; it filters Aquatic Life and General rows (Fish
+# Consumption and Recreation rows have no water class in the source).
+# Freshwater metal rows marked "hardness-based" are evaluated with
+# calc_total_metal_criterion() and therefore require a hardness (mg/L CaCO3).
+# Other aquatic life metal criteria in the source are dissolved values; they
+# are divided by the conversion factor from calc_cf() and do not need a
+# hardness. Metal criteria returned by this function are total recoverable
+# concentrations in ug/L.
+#
+# Criteria with a criteria_type of "Wet Season" or "Dry Season" require
+# `season`; criteria with no criteria_type apply in either season.  `limit`
+# selects MAX criteria (the lowest value is returned) or MIN criteria (the
+# highest value is returned).  Fish tissue criteria (mg/kg) are excluded, and
+# an error is raised if the remaining criteria are in more than one unit.
+#
+# With verbose = FALSE (the default), a single numeric value is returned; with
+# verbose = TRUE, the winning row and its source metadata are returned as a
+# one-row data frame.
 lookup_hi_criterion <- function(parameter,
-                                use = c("Aquatic Life", "Fish Consumption"),
-                                water_class = c("Freshwater", "Saltwater"),
+                                use = c("Aquatic Life", "Fish Consumption",
+                                        "General", "Recreation"),
+                                water_class = c("Freshwater", "Saltwater",
+                                                "Inland Freshwater"),
+                                season = NULL,
+                                limit = c("MAX", "MIN"),
                                 hardness = NULL,
                                 verbose = FALSE,
-                                criteria_file = "hi_criteria_long_format.csv") {
-  # Validate the required parameter and option inputs before reading the criteria table.
+                                criteria_file = "./scripts/hi_criteria_long_format.csv") {
   if (!is.character(parameter) || length(parameter) != 1L || is.na(parameter))
     stop("parameter must be one character string.")
-  if (!is.character(use) || !length(use))
-    stop("use must contain Aquatic Life and/or Fish Consumption.")
-  if (!is.character(water_class) || !length(water_class))
-    stop("water_class must contain Freshwater and/or Saltwater.")
+  if (!is.character(use) || length(use) < 1L)
+    stop("use must contain Aquatic Life, Fish Consumption, General, and/or Recreation.")
+  if (!is.character(water_class) || length(water_class) < 1L)
+    stop("water_class must contain Freshwater, Saltwater, and/or Inland Freshwater.")
   if (!is.logical(verbose) || length(verbose) != 1L || is.na(verbose))
     stop("verbose must be TRUE or FALSE.")
-
-  # Normalize labels so common variants such as "fresh" and "Freshwater"
-  # can be used interchangeably by the caller.
-  normalize <- function(x) gsub("[^A-Z0-9]", "", toupper(trimws(x)))
-  # Map the accepted shorthand labels to the names used in the source table.
+  limit <- match.arg(toupper(limit[1L]), c("MAX", "MIN"))
+  
+  normalize <- function(x) {
+    x <- toupper(trimws(x))
+    gsub("[^A-Z0-9]", "", x)
+  }
+  use_key <- normalize(use)
   use_map <- c(AQUATICLIFE = "Aquatic Life", AQUATIC = "Aquatic Life",
-               FISHCONSUMPTION = "Fish Consumption", FISH = "Fish Consumption")
+               FISHCONSUMPTION = "Fish Consumption", FISH = "Fish Consumption",
+               GENERAL = "General", RECREATION = "Recreation")
+  class_key <- normalize(water_class)
   class_map <- c(FRESHWATER = "Freshwater", FRESH = "Freshwater",
-                 SALTWATER = "Saltwater", SALT = "Saltwater")
-  uk <- normalize(use); ck <- normalize(water_class)
-  # Reject labels that cannot be mapped to a source-table use or water class.
-  if (any(!uk %in% names(use_map)))
-    stop("use must be Aquatic Life, Fish Consumption, or both.")
-  if (any(!ck %in% names(class_map)))
-    stop("water_class must be Freshwater, Saltwater, or both.")
-  uses <- unname(use_map[uk]); classes <- unname(class_map[ck])
-
-  # Read the long-format criteria table and assign stable column names. The
-  # UTF-8-BOM setting removes the byte-order mark in the first column header.
+                 SALTWATER = "Saltwater", SALT = "Saltwater",
+                 INLANDFRESHWATER = "Inland Freshwater",
+                 INLAND = "Inland Freshwater")
+  if (any(!use_key %in% names(use_map)))
+    stop("use must be Aquatic Life, Fish Consumption, General, and/or Recreation.")
+  if (any(!class_key %in% names(class_map)))
+    stop("water_class must be Freshwater, Saltwater, and/or Inland Freshwater.")
+  uses <- unname(use_map[use_key])
+  classes <- unname(class_map[class_key])
+  
+  season_map <- c(WETSEASON = "Wet Season", WET = "Wet Season",
+                  DRYSEASON = "Dry Season", DRY = "Dry Season")
+  if (!is.null(season)) {
+    if (!is.character(season) || length(season) != 1L || is.na(season) ||
+        !normalize(season) %in% names(season_map))
+      stop("season must be Wet Season or Dry Season.")
+    season <- unname(season_map[normalize(season)])
+  }
+  
   dat <- read.csv(criteria_file, stringsAsFactors = FALSE, check.names = FALSE,
                   na.strings = c("", "NA"), fileEncoding = "UTF-8-BOM")
-  names(dat)[1:8] <- c("substance_name", "cas_no", "criteria_name",
-                       "water_type", "criteria_class", "limit_name",
-                       "value", "unit_name")
-  # Filter first by parameter and requested use, then apply the water-class
-  # restriction. Fish-consumption rows have no water class and are retained
-  # whenever Fish Consumption is requested.
-  pkey <- normalize(parameter)
-  hits <- dat[normalize(dat$substance_name) == pkey &
-               dat$criteria_name %in% uses, , drop = FALSE]
-  hits <- hits[hits$criteria_name == "Fish Consumption" |
-                 hits$water_type %in% classes, , drop = FALSE]
-  if (!nrow(hits)) stop("No applicable criterion was found for the requested inputs.")
-
-  # Convert ordinary numeric criteria to numbers. Hardness-based metal rows
-  # contain text in the source value column and are handled below.
-  metal_keys <- c("ARSENIC", "CADMIUM", "CHROMIUMVI", "COPPER", "LEAD",
-                  "MERCURY", "NICKEL", "SELENIUM", "SILVER", "ZINC")
-  is_metal <- pkey %in% metal_keys
-  hits$criterion_ug_L <- suppressWarnings(as.numeric(hits$value))
-  hard <- pkey %in% metal_keys & hits$criteria_name == "Aquatic Life" &
-    hits$water_type == "Freshwater" & normalize(hits$value) == "HARDNESSBASED"
-  # Calculate each hardness-based freshwater metal criterion using the
-  # total-recoverable equations defined earlier in this file.
-  if (any(hard)) {
-    # Hardness is required only when a selected row actually needs it.
+  names(dat) <- tolower(trimws(names(dat)))
+  required <- c("substance_name", "criteria_name", "water_type",
+                "criteria_class", "criteria_type", "limit_name", "value",
+                "unit_name")
+  if (any(!required %in% names(dat)))
+    stop("criteria_file is missing: ",
+         paste(setdiff(required, names(dat)), collapse = ", "))
+  
+  parameter_key <- normalize(parameter)
+  dat_key <- normalize(dat$substance_name)
+  hits <- dat[dat_key == parameter_key & dat$criteria_name %in% uses, , drop = FALSE]
+  # Fish consumption and recreation criteria are not assigned a water class.
+  hits <- hits[is.na(hits$water_type) | hits$water_type %in% classes, , drop = FALSE]
+  hits <- hits[toupper(trimws(hits$limit_name)) == limit, , drop = FALSE]
+  # Exclude fish tissue criteria such as methylmercury (mg/kg).
+  hits <- hits[!grepl("/\\s*kg", hits$unit_name, ignore.case = TRUE), , drop = FALSE]
+  if (!nrow(hits)) stop("No applicable criterion was found for parameter/use/water_class/limit.")
+  
+  seasonal <- !is.na(hits$criteria_type) &
+    normalize(hits$criteria_type) %in% names(season_map)
+  if (any(seasonal)) {
+    if (is.null(season))
+      stop("season (Wet Season or Dry Season) is required for seasonal criteria.")
+    hits <- hits[!seasonal | unname(season_map[normalize(hits$criteria_type)]) == season,
+                 , drop = FALSE]
+  }
+  
+  metals <- c("ARSENIC", "CADMIUM", "CHROMIUMVI", "COPPER", "LEAD", "MERCURY",
+              "NICKEL", "SELENIUM", "SILVER", "ZINC")
+  is_metal <- parameter_key %in% metals
+  # Parameter name and water class codes used by the metal functions above.
+  metal_parameter <- if (parameter_key == "CHROMIUMVI") "CHROMIUM(VI)" else parameter_key
+  class_code <- ifelse(hits$water_type %in% "Saltwater", "SALT", "FRESH")
+  hits$criterion_value <- suppressWarnings(as.numeric(hits$value))
+  metal_rows <- is_metal & hits$criteria_name == "Aquatic Life"
+  hard_rows <- metal_rows & hits$water_type %in% "Freshwater" &
+    normalize(hits$value) == "HARDNESSBASED"
+  if (any(hard_rows)) {
     if (is.null(hardness) || length(hardness) != 1L || !is.numeric(hardness) ||
         is.na(hardness) || hardness <= 0)
       stop("A positive hardness (mg/L CaCO3) is required for hardness-based freshwater metals.")
-    p <- toupper(trimws(parameter))
-    if (pkey == "CHROMIUMVI") p <- "CHROMIUM(VI)"
-    for (i in which(hard)) {
-      hits$criterion_ug_L[i] <- calc_total_metal_criterion(
-        hardness, p, hits$criteria_class[i], "FRESH")
+    for (i in which(hard_rows)) {
+      hits$criterion_value[i] <- calc_total_metal_criterion(
+        hardness, metal_parameter, hits$criteria_class[i], class_code[i])
+      hits$unit_name[i] <- "ug/L"
     }
   }
-  # Aquatic-life metal values in the long-format source are dissolved values.
-  # Convert numeric aquatic-life metal rows to total recoverable using the
-  # applicable dissolved-fraction conversion factor. Fish-consumption values
-  # are already direct criteria and are not translated.
-  numeric_metal <- is_metal & hits$criteria_name == "Aquatic Life" & !hard &
-    is.finite(hits$criterion_ug_L)
-  if (any(numeric_metal)) {
-    conversion_hardness <- if (is.null(hardness)) 100 else hardness
-    p <- toupper(trimws(parameter))
-    if (pkey == "CHROMIUMVI") p <- "CHROMIUM(VI)"
-    for (i in which(numeric_metal)) {
-      class_code <- if (hits$water_type[i] == "Freshwater") "FRESH" else "SALT"
-      type_code <- make_type(p, hits$criteria_class[i], class_code)
-      cf <- calc_cf(conversion_hardness, type_code)
-      if (is.finite(cf) && cf > 0)
-        hits$criterion_ug_L[i] <- hits$criterion_ug_L[i] / cf
-    }
+  # Convert fixed dissolved aquatic life metal criteria to total recoverable.
+  fixed_rows <- metal_rows & !hard_rows & is.finite(hits$criterion_value)
+  for (i in which(fixed_rows)) {
+    type_code <- make_type(metal_parameter, hits$criteria_class[i], class_code[i])
+    hits$criterion_value[i] <- hits$criterion_value[i] /
+      calc_cf(hardness = hardness, type_code = type_code)
   }
-  # Remove unavailable or invalid values before selecting the most stringent
-  # (lowest) applicable criterion.
-  hits <- hits[is.finite(hits$criterion_ug_L) & hits$criterion_ug_L >= 0, , drop = FALSE]
+  hits <- hits[is.finite(hits$criterion_value), , drop = FALSE]
   if (!nrow(hits)) stop("No numeric criterion was available for the requested inputs.")
-  winner <- hits[which.min(hits$criterion_ug_L), , drop = FALSE]
-  # Return only the numeric criterion unless the caller requests source
-  # metadata and the classification fields for review.
-  if (!verbose) return(as.numeric(winner$criterion_ug_L[1L]))
+  
+  # Criteria are only comparable within one unit. A trailing "N" or "P" (as in
+  # "ug/L N") names the element and is ignored; micro signs are equivalent.
+  unit_key <- tolower(gsub("\\s+", "", sub("\\s+[NP]$", "", hits$unit_name)))
+  unit_key <- gsub("µ|μ", "u", unit_key)
+  if (length(unique(unit_key)) > 1L)
+    stop("Applicable criteria are in more than one unit (",
+         paste(unique(hits$unit_name), collapse = ", "),
+         "); narrow use or water_class.")
+  
+  winner_index <- if (limit == "MAX") which.min(hits$criterion_value) else
+    which.max(hits$criterion_value)
+  winner <- hits[winner_index, , drop = FALSE]
+  if (!verbose) return(as.numeric(winner$criterion_value[1L]))
   winner$value_original <- winner$value
-  winner$value <- winner$criterion_ug_L
-  winner$unit_name <- "ug/L total recoverable"
-  winner$criterion_ug_L <- NULL
+  winner$value <- winner$criterion_value
+  if (is_metal) winner$unit_name <- "ug/L total recoverable"
+  winner$criterion_value <- NULL
   winner
 }
